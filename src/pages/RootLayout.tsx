@@ -9,7 +9,7 @@ export const RootLayout = () => {
         as="aside"
         minHeight={{ lg: "100vh" }}
         backgroundColor="#F4A261"
-        colSpan={{ base: 6, lg: 2, xl: 1 }}
+        colSpan={{ base: 1, lg: 1, xl: 1 }}
         padding="20px"
       >
         <Sidebar />
@@ -17,7 +17,7 @@ export const RootLayout = () => {
       <GridItem
         backgroundColor="#EEEEEE"
         as="main"
-        colSpan={{ base: 6, lg: 4, xl: 5 }}
+        colSpan={{ base: 5, lg: 5, xl: 5 }}
         padding="20px"
       >
         <Outlet />
