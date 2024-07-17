@@ -1,5 +1,6 @@
 {
   "name": "recipe",
+  "homepage": "https://royal-design.github.io/recipe/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

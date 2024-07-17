@@ -13,7 +13,7 @@ import { ErrorPage } from "./pages/ErrorPage";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
-      <Route index element={<Mainpage />} />
+      <Route path="/recipe" element={<Mainpage />} />
       <Route path="mainpage/:id" element={<Mainpage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
