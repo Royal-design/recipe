@@ -103,7 +103,10 @@ export const RecipeDetails = ({ data }: dataType) => {
                         width={"100%"}
                       >
                         <Td width={"20%"}>
-                          {(ing.quantity / data?.servings) * servingNumber}
+                          {(
+                            (ing.quantity / data?.servings) *
+                            servingNumber
+                          ).toFixed(2)}
                         </Td>
                         <Td width={"10%"}>{ing?.unit ? ing.unit : "null"}</Td>
                         <Td width={"70%"} flexWrap={"wrap"}>
