@@ -2,7 +2,6 @@ import { FormControl } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { HStack } from "@chakra-ui/react";
-import { Form } from "react-router-dom";
 import "./navbar.scss";
 import { MenuItemType } from "../../context/ContextProvider";
 import { useState } from "react";
@@ -24,7 +23,7 @@ export const Navbar = ({ setQuery }: PropsType) => {
   };
 
   return (
-    <Form method="post" action="/about" onSubmit={(e) => handleSubmit(e)}>
+    <form action="" onSubmit={(e) => handleSubmit(e)}>
       <FormControl display="flex" flexDir="column" alignItems="center">
         <HStack>
           <input
@@ -46,6 +45,6 @@ export const Navbar = ({ setQuery }: PropsType) => {
           </button>
         </HStack>
       </FormControl>
-    </Form>
+    </form>
   );
 };

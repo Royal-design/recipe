@@ -1,24 +1,20 @@
 import { RootLayout } from "./pages/RootLayout";
 import { Mainpage } from "./pages/Mainpage";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  createRoutesFromElements
-} from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ErrorPage } from "./pages/ErrorPage";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route element={<RootLayout />}>
-      <Route path="recipe" element={<Mainpage />} />
-      <Route path="mainpage/:id" element={<Mainpage />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Route>
-  )
-);
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter basename="/">
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<Mainpage />} />
+          <Route path="mainpage/:id" element={<Mainpage />} />
+        </Route>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
