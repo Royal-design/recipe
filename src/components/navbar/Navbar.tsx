@@ -5,6 +5,7 @@ import { HStack } from "@chakra-ui/react";
 import "./navbar.scss";
 import { MenuItemType } from "../../context/ContextProvider";
 import { useState } from "react";
+
 type PropsType = {
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;

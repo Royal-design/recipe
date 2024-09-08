@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/icons";
 
 export const Sidebar = () => {
-  const { data, isLoading, error } = UseMenuHook();
+  const { data, isLoading, error, query } = UseMenuHook();
   const [page, setPage] = useState(1);
   const resultsPerPage = 10;
   const start = (page - 1) * resultsPerPage;
@@ -40,7 +40,8 @@ export const Sidebar = () => {
       <CardBody>
         <List>
           <Stack divider={<StackDivider borderColor="white" />}>
-            {isLoading &&
+            {query.length > 0 &&
+              isLoading &&
               !error &&
               [...Array(10).keys()].map((_, i) => (
                 <Box
@@ -61,7 +62,7 @@ export const Sidebar = () => {
                   </HStack>
                 </Box>
               ))}
-            {data && data.length === 0 && (
+            {query.length > 0 && data && data.length === 0 && (
               <Box textAlign={"center"} shadow={"md"}>
                 <WarningIcon color={"white"} />
                 <Text color={"white"} fontSize={"1.1rem"}>

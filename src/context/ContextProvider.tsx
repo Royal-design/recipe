@@ -19,7 +19,7 @@ type useMenuType = {
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
   result: MenuItemType[];
-  setResult: any;
+  setResult: React.Dispatch<React.SetStateAction<never[]>>;
   id: string;
   setId: React.Dispatch<React.SetStateAction<string>>;
 };

@@ -16,7 +16,7 @@ export const getApi = async (url: string, query: string) => {
   return response.data.data.recipes;
 };
 
-export const getApibyId = async (url: string, id: string) => {
+export const getApibyId = async (url: string, id: any) => {
   await delay();
   const response = await api.get(`${url}/recipes/${id}?key=${APIKEY}`);
   return response.data.data.recipe;

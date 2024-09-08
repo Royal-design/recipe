@@ -26,7 +26,6 @@ export const RecipeDetails = ({ data }: dataType) => {
   const increaseServingClick = () => {
     if (servingNumber !== 0) setSevingNumber((prev) => prev + 1);
   };
-
   const decreaseServingClick = () => {
     if (servingNumber !== 1) setSevingNumber((prev) => prev - 1);
   };
@@ -62,7 +61,6 @@ export const RecipeDetails = ({ data }: dataType) => {
                   </Text>
                   Cooking Time
                 </Tag>
-
                 <Flex alignItems={"center"} fontSize={"1rem"}>
                   <Button onClick={decreaseServingClick}>-</Button>
                   <Text>Servings</Text>
@@ -70,9 +68,7 @@ export const RecipeDetails = ({ data }: dataType) => {
                 </Flex>
               </Flex>
             </CardHeader>
-
             <Divider />
-
             <CardBody>
               <Text
                 textAlign={"center"}
@@ -132,7 +128,6 @@ export const RecipeDetails = ({ data }: dataType) => {
                     {data?.publisher}
                   </Text>
                 </Tag>
-
                 <Text>
                   <Button>
                     <Link target="_blank" to={data?.source_url}>
