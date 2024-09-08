@@ -20,8 +20,6 @@ type useMenuType = {
   setQuery: React.Dispatch<React.SetStateAction<string>>;
   result: MenuItemType[];
   setResult: React.Dispatch<React.SetStateAction<never[]>>;
-  id: string;
-  setId: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const useMenuState: any = {};
@@ -34,7 +32,6 @@ type ChildrenType = {
 
 export const ContextProvider = ({ children }: ChildrenType) => {
   const [query, setQuery] = useState("");
-  const [id, setId] = useState("");
   const [result, setResult] = useState([]);
   const { data, isLoading, error } = useSWR(
     [endPoint, query],
@@ -50,9 +47,7 @@ export const ContextProvider = ({ children }: ChildrenType) => {
         query,
         setQuery,
         result,
-        setResult,
-        id,
-        setId
+        setResult
       }}
     >
       {children}

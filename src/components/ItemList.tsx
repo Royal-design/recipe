@@ -1,7 +1,6 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import { UseMenuHook } from "../hooks/UseMenuHook";
+import { NavLink } from "react-router-dom";
 
 type PropsType = {
   image: string;
@@ -11,11 +10,7 @@ type PropsType = {
 };
 
 export const ItemList = ({ image, title, publisher, id }: PropsType) => {
-  const { setId } = UseMenuHook();
-  const navigate = useNavigate();
   const handleclick = () => {
-    navigate(`/mainpage/${id}`);
-    setId(id);
     window.scrollTo(0, 0);
   };
   return (
@@ -29,8 +24,10 @@ export const ItemList = ({ image, title, publisher, id }: PropsType) => {
       rounded="10px"
     >
       <HStack>
-        <Avatar size="sm" name={`${publisher}`} src={`${image}`} />
-        <Text fontSize="1.2rem">{title}</Text>
+        <NavLink className={"nav"} to={`/mainpage/${id}`}>
+          <Avatar mr={"4px"} size="sm" name={`${publisher}`} src={`${image}`} />
+          <Text fontSize="1.2rem">{title}</Text>
+        </NavLink>
       </HStack>
     </Box>
   );

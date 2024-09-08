@@ -13,3 +13,13 @@ body {
 .visibility {
   visibility: hidden;
 }
+.active {
+  background-color: rgb(207, 205, 205);
+  width: 10rem;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
